@@ -1,10 +1,9 @@
-import React,{useState, useEffect} from 'react'
+import React from 'react'
 import {useDispatch} from  "react-redux";
 import { toggleDetailView } from '../Redux/Slices/detailSlice';
 import {useSelector} from 'react-redux'
 import { IMG_CDN_URL } from '../Utils/constants';
 import useDetailTrailer from '../CustomHooks/useDetailTrailer';
-import { Link } from 'react-router-dom';
 
 
 const MovieDetail = () => {
@@ -46,9 +45,9 @@ const MovieDetail = () => {
                   "https://www.youtube-nocookie.com/embed/" + movieTrailer?.key
                 }
                 title="YouTube video player"
-                frameborder="0"
+                frameBorder="0"
                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share; fullscreen"
-                allowfullscreen
+                allowFullScreen
                 loading="lazy"
               ></iframe>
             </div>

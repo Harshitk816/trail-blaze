@@ -6,7 +6,7 @@ import {useSelector, useDispatch} from 'react-redux';
 import { useEffect } from 'react';
 import { onAuthStateChanged } from 'firebase/auth';
 import { addUser,removeUser } from '../Redux/Slices/userSlice';
-import { LOGO, SUPPORTED_LANGUAGES, USER_AVATAR } from '../Utils/constants';
+import { LOGO, SUPPORTED_LANGUAGES } from '../Utils/constants';
 import { toggleGptSearchView } from '../Redux/Slices/gptSlice';
 import { changeLanguage } from '../Redux/Slices/configSlice';
 
@@ -43,7 +43,7 @@ const Header = () => {
       return ()=> unsubscribe(); //when component unmounts, we will also unsubscibe  the listener onAuthStateChange
 
     });
-  },[]);
+  });
   
   const handleSignOut=()=>{
     signOut(auth).then(() => {

@@ -1,7 +1,6 @@
 import React from 'react'
 import { useSelector } from 'react-redux';
 import { IMG_CDN_URL } from '../Utils/constants';
-import Header from './Header';
 
 const MovieInfo = () => {
     const movieDetails = useSelector(store=>store.detail.detail);

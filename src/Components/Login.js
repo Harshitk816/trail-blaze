@@ -6,7 +6,7 @@ import {useDispatch} from 'react-redux'
 import { addUser } from '../Redux/Slices/userSlice';
 
 import { createUserWithEmailAndPassword, signInWithEmailAndPassword, updateProfile } from "firebase/auth";
-import { BACKGROUND, LOGIN_IMG, USER_AVATAR } from '../Utils/constants';
+import { LOGIN_IMG, USER_AVATAR } from '../Utils/constants';
 const Login = () => {
   
     const [isSignInForm, setIsSignInForm] = useState(true);
@@ -62,8 +62,7 @@ const Login = () => {
           password.current.value
         )
           .then((userCredential) => {
-            // Signed in
-            const user = userCredential.user;
+            
       
           })
           .catch((error) => {
