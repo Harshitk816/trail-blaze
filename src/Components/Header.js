@@ -22,28 +22,29 @@ const Header = () => {
 
   const handleLangChange=(e)=>{
     dispatch(changeLanguage(e.target.value));
-
   }
-  useEffect(()=>{
-    const unsubscribe = onAuthStateChanged(auth, (user) => {//if the user signed in then add user and navigate to browse(callback function)
+
+  useEffect(() => {
+    const unsubscribe = onAuthStateChanged(auth, (user) => {
       if (user) {
-        // User is signed in, see docs for a list of available properties
-        // https://firebase.google.com/docs/reference/js/auth.user
-        const {uid, email, displayName ,photoURL} = user;
-        dispatch(addUser({uid:uid, email:email, displayName: displayName, photoURL:photoURL}));
-        Navigate('/browse')
-        
-      } else { 
-        // User is signed out then remove user and log out
+        const { uid, email, displayName, photoURL } = user;
+        dispatch(
+          addUser({
+            uid: uid,
+            email: email,
+            displayName: displayName,
+            photoURL: photoURL,
+          })
+        );
+        Navigate('/browse');
+      } else {
         dispatch(removeUser());
-        Navigate("/")
-        // ...
+        Navigate('/');
       }
-
-      return ()=> unsubscribe(); //when component unmounts, we will also unsubscibe  the listener onAuthStateChange
-
     });
-  });
+
+    return () => unsubscribe();
+  }, [Navigate, dispatch]);
   
   const handleSignOut=()=>{
     signOut(auth).then(() => {
