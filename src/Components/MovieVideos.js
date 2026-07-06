@@ -10,7 +10,7 @@ const MovieVideos = () => {
   return (
     <div className="bg-black py-1 md:px-14 px-10 font-[poppins]">
       <div className="md:mb-5 mb-3 pt-4">
-        <span className="font-bold text-4xl text-orange-600">Videos</span>
+        <span className="font-bold text-4xl text-[#9b69ff]">Videos</span>
       </div>
       <div className="my-5">
         <div className="flex flex-row gap-10 overflow-x-scroll">

@@ -22,7 +22,7 @@ const MovieDetail = () => {
         
         <img className='fixed h-screen w-screen object-cover md:h-screen lg:h-screen bg-black ' src={IMG_CDN_URL+movieDetails.background_image} alt="background"/> 
         <div className='fixed h-screen w-screen object-cover md:h-screen lg:h-screen bg-gradient-to-t from-black  backdrop-blur-sm'>
-            <div className='flex px-4 pt-[5%] flex flex-col mx-5 text-white'>
+            <div className=' px-4 pt-[5%] flex flex-col mx-5 text-white'>
                 <img
                 className='py-4 w-36 md:w-48 lg:w-48'
                 alt='Movie Card'
@@ -30,7 +30,7 @@ const MovieDetail = () => {
                 </img>
                 <div className=' flex gap-3 py-4 md:py-4 lg:py-4'>
                     <a href='#trailer'><button className='bg-white text-black font-bold px-4 md:px-8 lg:px-8 p-1 md:p-2 lg:p-2 text-sm md:text-lg lg:text-lg rounded-md hover:bg-opacity-50'><i className='bx bx-play bx-xs'></i>Trailer</button></a>
-                    <button className='bg-red-700 text-white font-bold px-4 md:px-8 lg:px-8 p-1 md:p-2 lg:p-2 text-sm md:text-lg lg:text-lg rounded-md' onClick={handleMovieDetailView}>Close</button>
+                    <button className='bg-[#9b69ff] text-white font-bold px-4 md:px-8 lg:px-8 p-1 md:p-2 lg:p-2 text-sm md:text-lg lg:text-lg rounded-md' onClick={handleMovieDetailView}>Close</button>
             
                 </div> 
                 <h1 className='text-xl md:text-6xl lg:text-6xl font-bold drop-shadow'>{movieDetails.title}</h1>
