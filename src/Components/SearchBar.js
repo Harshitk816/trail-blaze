@@ -34,7 +34,12 @@ const SearchBar = () => {
     //For each movies in the array, i will search the TMBD API
     const promiseArray = gptMovies.map(movie=>searchMovieTMDB(movie)) ;  //will return [PROMISE, PROMISE, PROMISE, PROMISE]
 
-    const tmdbResults =  await Promise.all(promiseArray);
+    const  settledResults = await Promise.allSettled(promiseArray);
+  
+    //  Extract only the successfully fulfilled movie data
+    const tmdbResults = settledResults.map(result => 
+      result.status === "fulfilled" ? result.value : null
+    );
     console.log(tmdbResults);  
     dispatch(addGptMovieResult({movieNames: gptMovies, movieResults: tmdbResults}));
   }
